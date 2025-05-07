@@ -22,7 +22,7 @@ def health():
 def ping_self():
     while True:
         try:
-            res = requests.get(f"https:{SITE_URL}/health")
+            res = requests.get(f"https://{SITE_URL}/health")
             if res.status_code != 200:
                 print(f"Self ping failed with status code {res.status_code}")
             # else:
