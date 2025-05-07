@@ -2,6 +2,12 @@ from flask import Flask, jsonify
 import threading
 import time
 import requests
+import os 
+
+SITE_URL = os.getenv("SITE_URL")
+
+if SITE_URL is None:
+    raise ValueError("SITE_URL environment variable is not set.")
 
 app = Flask(__name__)
 
